@@ -147,6 +147,7 @@ func NewWriterFromConfigFile(path string) (RollingWriter, error) {
 	if err != nil {
 		return nil, err
 	}
+	file.Close()
 
 	if err = json.Unmarshal(buf, &cfg); err != nil {
 		return nil, err
